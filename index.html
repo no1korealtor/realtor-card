@@ -125,7 +125,21 @@
       font-weight: 700;
       padding: 4px 12px;
       border-radius: 12px;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
+    }
+
+    .realtor-award-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid #fde68a;
+      margin-bottom: 14px;
     }
 
     .realtor-slogan {
@@ -547,26 +561,13 @@
         <span>🏛️ 개업공인중개사</span>
       </div>
       
-      <!-- 핵심 공인 이력 배지 리스트 -->
-      <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; align-items: center;">
-        <span style="display: inline-flex; align-items: center; gap: 6px; background: #fef3c7; color: #92400e; font-size: 13px; font-weight: 800; padding: 5px 14px; border-radius: 20px; border: 1px solid #fde68a;">
+      <!-- 상단 대표 하이라이트 뱃지: 국토부 장관상 1개로 심플하고 강렬하게 임팩트 부여 -->
+      <div style="display: flex; justify-content: center;">
+        <span class="realtor-award-pill">
           🏆 2024 국토교통부 장관상 수상
         </span>
-        <div style="display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;">
-          <span style="display: inline-flex; align-items: center; gap: 5px; background: #eff6ff; color: #1e40af; font-size: 12.5px; font-weight: 700; padding: 4px 12px; border-radius: 16px; border: 1px solid #dbeafe;">
-            🌐 서울특별시 지정 글로벌 공인중개사
-          </span>
-          <span style="display: inline-flex; align-items: center; gap: 5px; background: #eff6ff; color: #1e40af; font-size: 12.5px; font-weight: 700; padding: 4px 12px; border-radius: 16px; border: 1px solid #dbeafe;">
-            🏛️ 서울글로벌센터 법률상담위원 (부동산)
-          </span>
-          <span style="display: inline-flex; align-items: center; gap: 5px; background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 700; padding: 4px 12px; border-radius: 16px; border: 1px solid #e2e8f0;">
-            ⚖️ 前 한국공인중개사협회 전문위원
-          </span>
-          <span style="display: inline-flex; align-items: center; gap: 5px; background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 700; padding: 4px 12px; border-radius: 16px; border: 1px solid #e2e8f0;">
-            📋 前 협회 회원정책연구위원 ('22)
-          </span>
-        </div>
       </div>
+
       <p class="realtor-slogan">
         고객의 소중한 자산을 안전하고 투명하게 지켜드립니다.<br>
         서울 마포구 일대 매물 전문 상담 및 책임 중개
@@ -589,7 +590,7 @@
       </div>
     </div>
 
-    <!-- 주요 공인 이력 & 수상 경력 카드 -->
+    <!-- 주요 공인 이력 & 수상 경력 카드 (상세 내용 정리) -->
     <div class="info-card" style="border-left: 4px solid #f59e0b;">
       <div class="section-title">
         <span>🎖️ 주요 공인 이력 & 수상</span>
@@ -912,9 +913,8 @@
           contentInput.value = '';
           loadMemos();
         } else {
-          // 백엔드 테이블이 없을 경우 로컬에 보존하여 유실 방지
           saveLocalMemo(newMemo);
-          showToast('포스트잇이 등록되었습니다! (로컬) 📌');
+          showToast('포스트잇이 등록되었습니다! 📌');
           contentInput.value = '';
           loadMemos();
         }
@@ -953,7 +953,7 @@
       };
 
       try {
-        const res = await fetch(`${SUPABASE_URL}/rest/v1/card_memos?id=eq.${id}`, {
+        await fetch(`${SUPABASE_URL}/rest/v1/card_memos?id=eq.${id}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
@@ -963,7 +963,6 @@
           body: JSON.stringify(replyData)
         });
 
-        // 로컬 캐시 업데이트
         let cached = JSON.parse(localStorage.getItem('cached_card_memos') || '[]');
         cached = cached.map(item => item.id == id ? { ...item, ...replyData } : item);
         localStorage.setItem('cached_card_memos', JSON.stringify(cached));
