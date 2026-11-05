@@ -1,0 +1,7 @@
+# Secret & Private credentials files
+*.secret.md
+*.secrets.md
+credentials.md
+secrets.md
+.env*
+*.key
