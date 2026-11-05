@@ -274,6 +274,239 @@
       background: #e2e8f0;
     }
 
+    /* 🏷️ 포스트잇 소통 메모판 스타일 */
+    .memo-section {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 22px 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .memo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .memo-source-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+
+    .memo-form {
+      background: #fffbeb;
+      border: 1.5px dashed #fcd34d;
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 16px;
+    }
+
+    .memo-form-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .memo-input {
+      border: 1px solid #fde68a;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 13.5px;
+      outline: none;
+      transition: border 0.15s;
+      width: 100%;
+    }
+    .memo-input:focus {
+      border-color: #d97706;
+    }
+
+    .memo-textarea {
+      width: 100%;
+      border: 1px solid #fde68a;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 13.5px;
+      outline: none;
+      resize: none;
+      height: 60px;
+      font-family: inherit;
+      box-sizing: border-box;
+      display: block;
+    }
+    .memo-textarea:focus {
+      border-color: #d97706;
+    }
+
+    .memo-submit-btn {
+      width: 100%;
+      margin-top: 8px;
+      background: #d97706;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      font-weight: 700;
+      font-size: 13.5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: background 0.15s;
+    }
+    .memo-submit-btn:active {
+      background: #b45309;
+    }
+
+    .memo-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* 개별 포스트잇 카드 */
+    .memo-card {
+      background: #fefce8;
+      border-radius: 14px;
+      padding: 14px;
+      border: 1px solid #fef08a;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      position: relative;
+    }
+
+    .memo-card.ref-ter {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+    .memo-card.ref-showing {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+    }
+
+    .memo-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .memo-author-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .memo-author {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #1e293b;
+    }
+
+    .memo-source-tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: rgba(0,0,0,0.05);
+      color: #475569;
+    }
+    .ref-ter .memo-source-tag {
+      background: #dcfce7;
+      color: #15803d;
+    }
+    .ref-showing .memo-source-tag {
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+
+    .memo-time {
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+    .memo-content {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: #334155;
+      word-break: break-all;
+      white-space: pre-wrap;
+    }
+
+    .memo-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .memo-action-btn {
+      background: none;
+      border: none;
+      color: #64748b;
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 2px 4px;
+    }
+    .memo-action-btn:hover {
+      color: #0f172a;
+    }
+
+    /* 대표님 답글 포스트잇 */
+    .memo-reply-box {
+      margin-top: 10px;
+      padding: 10px 12px;
+      background: #ffffff;
+      border-radius: 10px;
+      border-left: 3.5px solid #2563eb;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    .memo-reply-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .memo-reply-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #1d4ed8;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .memo-reply-text {
+      font-size: 13px;
+      line-height: 1.45;
+      color: #1e293b;
+      font-weight: 600;
+      word-break: break-all;
+      white-space: pre-wrap;
+    }
+
+    .memo-empty {
+      text-align: center;
+      padding: 24px 10px;
+      color: #94a3b8;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
     /* 토스트 알림 */
     #toast {
       position: fixed;
@@ -441,6 +674,36 @@
       </div>
     </div>
 
+    <!-- 🏷️ 방문자 소통 메모판 (포스트잇 방명록) -->
+    <div class="memo-section">
+      <div class="memo-header">
+        <div class="section-title" style="margin-bottom: 0;">
+          <span>📝 소통 포스트잇</span>
+        </div>
+        <div id="detectedSourceBadge" class="memo-source-badge">
+          <span>🤝</span> <span id="sourceNameText">명함 방문</span>
+        </div>
+      </div>
+
+      <!-- 메모 작성 폼 -->
+      <form id="memoForm" class="memo-form" onsubmit="handleAddMemo(event)">
+        <div class="memo-form-row">
+          <input type="text" id="memoAuthor" class="memo-input" placeholder="성함 또는 닉네임 (예: 성산동 주민, 이중개사)" maxlength="20" required>
+        </div>
+        <textarea id="memoContent" class="memo-textarea" placeholder="대표님께 남기실 짧은 응원이나 소통 한마디를 적어주세요 (최대 120자)" maxlength="120" required></textarea>
+        <button type="submit" id="memoSubmitBtn" class="memo-submit-btn">
+          <span>📌</span> <span>포스트잇 남기기</span>
+        </button>
+      </form>
+
+      <!-- 포스트잇 목록 피드 -->
+      <div id="memoList" class="memo-list">
+        <div class="memo-empty">
+          <span>📮 첫 번째 소통 포스트잇을 남겨보세요!</span>
+        </div>
+      </div>
+    </div>
+
     <!-- 모바일 명함 공유 버튼 -->
     <button class="share-btn" onclick="copyProfileLink()">
       <span>🔗</span>
@@ -479,13 +742,302 @@
 
   </div>
 
-  <div id="toast">링크가 클립보드에 복사되었습니다!</div>
+  <div id="toast">알림</div>
 
   <script>
+    // --- Supabase 설정 ---
+    const SUPABASE_URL = 'https://clzrbyplzjdrrscctcsl.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_SqGXeBJseIB_4hjHB6GZ8g_rF_tv11k';
+    const ADMIN_PIN = '0000'; // 대표님 답글 & 관리용 핀번호
+
+    let currentSource = '직접 방문';
+
+    // 1. 유입 경로 감지 (URL 파라미터 or document.referrer)
+    function detectReferrerSource() {
+      const params = new URLSearchParams(window.location.search);
+      const ref = params.get('ref') || '';
+      const docRef = document.referrer || '';
+
+      if (ref === 'ter' || docRef.includes('ter-magazine')) {
+        currentSource = '소식지 터';
+      } else if (ref === 'showing' || ref === 'showing-note' || docRef.includes('showing-note')) {
+        currentSource = '중개노트';
+      } else {
+        currentSource = '직접 방문';
+      }
+
+      const badgeElem = document.getElementById('detectedSourceBadge');
+      const textElem = document.getElementById('sourceNameText');
+      if (currentSource === '소식지 터') {
+        badgeElem.style.background = '#dcfce7';
+        badgeElem.style.color = '#15803d';
+        badgeElem.style.borderColor = '#86efac';
+        textElem.textContent = '📰 소식지 터 독자';
+      } else if (currentSource === '중개노트') {
+        badgeElem.style.background = '#dbeafe';
+        badgeElem.style.color = '#1d4ed8';
+        badgeElem.style.borderColor = '#93c5fd';
+        textElem.textContent = '🏡 중개노트 사용자';
+      } else {
+        badgeElem.style.background = '#f1f5f9';
+        badgeElem.style.color = '#475569';
+        badgeElem.style.borderColor = '#cbd5e1';
+        textElem.textContent = '🤝 직접 방문';
+      }
+    }
+
+    // 2. 포스트잇 목록 불러오기
+    async function loadMemos() {
+      const listEl = document.getElementById('memoList');
+      try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/card_memos?select=*&order=created_at.desc&limit=30`, {
+          headers: {
+            'apikey': SUPABASE_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_KEY
+          }
+        });
+
+        if (res.ok) {
+          const memos = await res.json();
+          renderMemos(memos);
+          localStorage.setItem('cached_card_memos', JSON.stringify(memos));
+        } else {
+          // 테이블 미생성이거나 에러 시 로컬 캐시/스토리지 활용
+          const cached = localStorage.getItem('cached_card_memos');
+          if (cached) renderMemos(JSON.parse(cached));
+        }
+      } catch (err) {
+        console.warn('Supabase fetch error, fallback to local:', err);
+        const cached = localStorage.getItem('cached_card_memos');
+        if (cached) renderMemos(JSON.parse(cached));
+      }
+    }
+
+    // 3. 포스트잇 렌더링
+    function renderMemos(memos) {
+      const listEl = document.getElementById('memoList');
+      if (!memos || memos.length === 0) {
+        listEl.innerHTML = `
+          <div class="memo-empty">
+            <span>📮 첫 번째 소통 포스트잇을 남겨보세요!</span>
+          </div>
+        `;
+        return;
+      }
+
+      listEl.innerHTML = memos.map(m => {
+        let cardClass = '';
+        let sourceIcon = '🤝';
+        if (m.referrer_source === '소식지 터') {
+          cardClass = 'ref-ter';
+          sourceIcon = '📰';
+        } else if (m.referrer_source === '중개노트') {
+          cardClass = 'ref-showing';
+          sourceIcon = '🏡';
+        }
+
+        const dateStr = formatDate(m.created_at);
+
+        // 대표님 답글 렌더링
+        let replyHtml = '';
+        if (m.reply) {
+          replyHtml = `
+            <div class="memo-reply-box">
+              <div class="memo-reply-header">
+                <span class="memo-reply-badge">👑 대표 조항준</span>
+                <span class="memo-time">${formatDate(m.reply_at)}</span>
+              </div>
+              <div class="memo-reply-text">${escapeHtml(m.reply)}</div>
+            </div>
+          `;
+        }
+
+        return `
+          <div class="memo-card ${cardClass}" id="memo-${m.id}">
+            <div class="memo-card-top">
+              <div class="memo-author-wrap">
+                <span class="memo-author">${escapeHtml(m.author)}</span>
+                <span class="memo-source-tag">${sourceIcon} ${escapeHtml(m.referrer_source || '직접 방문')}</span>
+              </div>
+              <span class="memo-time">${dateStr}</span>
+            </div>
+            <div class="memo-content">${escapeHtml(m.content)}</div>
+            ${replyHtml}
+            <div class="memo-actions">
+              <button class="memo-action-btn" onclick="handleReplyMemo('${m.id}')">💬 답글</button>
+              <button class="memo-action-btn" style="color: #94a3b8;" onclick="handleDeleteMemo('${m.id}')">✕ 삭제</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // 4. 포스트잇 추가
+    async function handleAddMemo(e) {
+      e.preventDefault();
+      const authorInput = document.getElementById('memoAuthor');
+      const contentInput = document.getElementById('memoContent');
+      const btn = document.getElementById('memoSubmitBtn');
+
+      const author = authorInput.value.trim();
+      const content = contentInput.value.trim();
+
+      if (!author || !content) return;
+
+      btn.disabled = true;
+      btn.innerHTML = '<span>⏳</span> <span>등록 중...</span>';
+
+      const newMemo = {
+        id: crypto.randomUUID ? crypto.randomUUID() : ('m_' + Date.now()),
+        author: author,
+        content: content,
+        referrer_source: currentSource,
+        created_at: new Date().toISOString()
+      };
+
+      try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/card_memos`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_KEY,
+            'Prefer': 'return=representation'
+          },
+          body: JSON.stringify(newMemo)
+        });
+
+        if (res.ok) {
+          showToast('포스트잇이 등록되었습니다! 📌');
+          contentInput.value = '';
+          loadMemos();
+        } else {
+          // 백엔드 테이블이 없을 경우 로컬에 보존하여 유실 방지
+          saveLocalMemo(newMemo);
+          showToast('포스트잇이 등록되었습니다! (로컬) 📌');
+          contentInput.value = '';
+          loadMemos();
+        }
+      } catch (err) {
+        saveLocalMemo(newMemo);
+        showToast('포스트잇이 등록되었습니다! 📌');
+        contentInput.value = '';
+        loadMemos();
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<span>📌</span> <span>포스트잇 남기기</span>';
+      }
+    }
+
+    function saveLocalMemo(memo) {
+      let list = JSON.parse(localStorage.getItem('cached_card_memos') || '[]');
+      list.unshift(memo);
+      localStorage.setItem('cached_card_memos', JSON.stringify(list));
+    }
+
+    // 5. 대표님 답글 남기기 (PIN 검증)
+    async function handleReplyMemo(id) {
+      const pin = prompt('대표님 관리자 PIN 4자리를 입력해주세요:');
+      if (!pin) return;
+      if (pin !== ADMIN_PIN) {
+        alert('관리자 PIN 번호가 일치하지 않습니다.');
+        return;
+      }
+
+      const replyText = prompt('대표님의 짧은 한 줄 답글을 입력해주세요:');
+      if (!replyText || !replyText.trim()) return;
+
+      const replyData = {
+        reply: replyText.trim(),
+        reply_at: new Date().toISOString()
+      };
+
+      try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/card_memos?id=eq.${id}`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_KEY
+          },
+          body: JSON.stringify(replyData)
+        });
+
+        // 로컬 캐시 업데이트
+        let cached = JSON.parse(localStorage.getItem('cached_card_memos') || '[]');
+        cached = cached.map(item => item.id == id ? { ...item, ...replyData } : item);
+        localStorage.setItem('cached_card_memos', JSON.stringify(cached));
+
+        showToast('답글이 등록되었습니다! 👑');
+        loadMemos();
+      } catch (err) {
+        showToast('답글 등록 완료!');
+        loadMemos();
+      }
+    }
+
+    // 6. 메모 삭제 (대표님 PIN 검증)
+    async function handleDeleteMemo(id) {
+      const pin = prompt('메모 삭제를 위해 대표님 PIN을 입력해주세요:');
+      if (!pin) return;
+      if (pin !== ADMIN_PIN) {
+        alert('관리자 PIN 번호가 일치하지 않습니다.');
+        return;
+      }
+
+      if (!confirm('이 메모를 정말 삭제하시겠습니까?')) return;
+
+      try {
+        await fetch(`${SUPABASE_URL}/rest/v1/card_memos?id=eq.${id}`, {
+          method: 'DELETE',
+          headers: {
+            'apikey': SUPABASE_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_KEY
+          }
+        });
+
+        let cached = JSON.parse(localStorage.getItem('cached_card_memos') || '[]');
+        cached = cached.filter(item => item.id != id);
+        localStorage.setItem('cached_card_memos', JSON.stringify(cached));
+
+        showToast('메모가 삭제되었습니다.');
+        loadMemos();
+      } catch (err) {
+        loadMemos();
+      }
+    }
+
+    // 날짜 포맷 (한국어 친화형)
+    function formatDate(isoStr) {
+      if (!isoStr) return '';
+      const d = new Date(isoStr);
+      const now = new Date();
+      const diffMs = now - d;
+      const diffMins = Math.floor(diffMs / 60000);
+      if (diffMins < 1) return '방금 전';
+      if (diffMins < 60) return `${diffMins}분 전`;
+      const diffHours = Math.floor(diffMins / 60);
+      if (diffHours < 24) return `${diffHours}시간 전`;
+      return `${d.getMonth() + 1}월 ${d.getDate()}일`;
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/[&<>"']/g, function(m) {
+        return {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#039;'
+        }[m];
+      });
+    }
+
     function copyProfileLink() {
       const url = window.location.href;
       if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(url).then(() => showToast());
+        navigator.clipboard.writeText(url).then(() => showToast('링크가 클립보드에 복사되었습니다! 📋'));
       } else {
         const t = document.createElement("textarea");
         t.value = url;
@@ -493,17 +1045,24 @@
         t.select();
         document.execCommand("copy");
         document.body.removeChild(t);
-        showToast();
+        showToast('링크가 클립보드에 복사되었습니다! 📋');
       }
     }
 
-    function showToast() {
+    function showToast(msg) {
       const toast = document.getElementById("toast");
+      if (msg) toast.textContent = msg;
       toast.classList.add("show");
       setTimeout(() => {
         toast.classList.remove("show");
       }, 2000);
     }
+
+    // 초기 실행
+    window.addEventListener('DOMContentLoaded', () => {
+      detectReferrerSource();
+      loadMemos();
+    });
   </script>
 </body>
 </html>
