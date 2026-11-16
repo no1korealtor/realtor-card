@@ -935,14 +935,34 @@
       localStorage.setItem('cached_card_memos', JSON.stringify(list));
     }
 
-    // 5. 대표님 답글 남기기 (PIN 검증)
-    async function handleReplyMemo(id) {
-      const pin = prompt('대표님 관리자 PIN 4자리를 입력해주세요:');
-      if (!pin) return;
+    // 대표님 관리자 권한 확인 (최초 1회 PIN 검증 후 자동 기억)
+    function ensureAdminAuth() {
+      // 1. 이미 인증된 브라우저인지 확인
+      if (localStorage.getItem('is_card_admin') === 'true') {
+        return true;
+      }
+      // 2. URL 파라미터에 admin 키가 있는 경우 자동 통과
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('admin') === 'true' || params.get('admin') === '1') {
+        localStorage.setItem('is_card_admin', 'true');
+        return true;
+      }
+      // 3. 최초 1회 PIN 입력 요구
+      const pin = prompt('대표님 관리자 PIN 4자리를 입력해주세요 (최초 1회만 입력):');
+      if (!pin) return false;
       if (pin !== ADMIN_PIN) {
         alert('관리자 PIN 번호가 일치하지 않습니다.');
-        return;
+        return false;
       }
+      // 인증 성공 시 브라우저에 영구 저장 (앞으로는 안 물어봄)
+      localStorage.setItem('is_card_admin', 'true');
+      showToast('대표님 인증이 완료되었습니다! 👑');
+      return true;
+    }
+
+    // 5. 대표님 답글 남기기 (PIN 검증)
+    async function handleReplyMemo(id) {
+      if (!ensureAdminAuth()) return;
 
       const replyText = prompt('대표님의 짧은 한 줄 답글을 입력해주세요:');
       if (!replyText || !replyText.trim()) return;
@@ -977,12 +997,7 @@
 
     // 6. 메모 삭제 (대표님 PIN 검증)
     async function handleDeleteMemo(id) {
-      const pin = prompt('메모 삭제를 위해 대표님 PIN을 입력해주세요:');
-      if (!pin) return;
-      if (pin !== ADMIN_PIN) {
-        alert('관리자 PIN 번호가 일치하지 않습니다.');
-        return;
-      }
+      if (!ensureAdminAuth()) return;
 
       if (!confirm('이 메모를 정말 삭제하시겠습니까?')) return;
 
